@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManiEra Nails | Exclusive Nail Artistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Ephesis&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f0;
+            color: #5a5343;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(245, 245, 240, 0.9) 0%, rgba(210, 200, 180, 0.8) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nail-polish {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .booking-form input, .booking-form select, .booking-form textarea {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #d2c8b4;
+        }
+        
+        .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+            outline: none;
+            border-color: #a89f8d;
+            box-shadow: 0 0 0 3px rgba(168, 159, 141, 0.2);
+        }
+         </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-beige-50 bg-opacity-90 backdrop-blur-sm fixed w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-playfair text-amber-900 font-bold italic">ManiEra</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#services" class="text-amber-900 hover:text-amber-700 px-3 py-2 text-sm font-medium">Usługi</a>
+                        <a href="#about" class="text-amber-900 hover:text-amber-700 px-3 py-2 text-sm font-medium">O Nas</a>
+                        <a href="#gallery" class="text-amber-900 hover:text-amber-700 px-3 py-2 text-sm font-medium">Galeria</a>
+                        <a href="#contact" class="text-amber-900 hover:text-amber-700 px-3 py-2 text-sm font-medium">Kontakt</a>
+                        <a href="#booking" class="bg-amber-800 text-white hover:bg-amber-700 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Umów Się</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-amber-900 hover:text-amber-700 focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-beige-100" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="text-amber-900 hover:text-amber-700 block px-3 py-2 text-base font-medium">Usługi</a>
+                <a href="#about" class="text-amber-900 hover:text-amber-700 block px-3 py-2 text-base font-medium">O Nas</a>
+                <a href="#gallery" class="text-amber-900 hover:text-amber-700 block px-3 py-2 text-base font-medium">Galeria</a>
+                <a href="#contact" class="text-amber-900 hover:text-amber-700 block px-3 py-2 text-base font-medium">Kontakt</a>
+                <a href="#booking" class="bg-amber-800 text-beige-50 hover:bg-amber-700 block px-3 py-2 rounded-md text-base font-medium">Umów Się</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1604654894610-df966bc5eb5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury nails" class="w-full h-full object-cover">
+        </div>
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                <div class="mt-10 md:mt-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-6 leading-tight">
+                        Elegancja w Każdym Detalu
+                    </h1>
+                    <p class="text-lg text-amber-800 mb-8 max-w-lg">
+                        Nasze indywidualne usługi to harmonia luksusu i perfekcyjnego wykonania, która podkreśli Twoją wyjątkowość.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#booking" class="bg-amber-800 text-white hover:bg-amber-700 px-6 py-3 rounded-md text-sm font-medium transition duration-300">
+                            Umów Się
+                        </a>
+                        <a href="#services" class="border border-amber-800 text-amber-800 hover:bg-amber-50 px-6 py-3 rounded-md text-sm font-medium transition duration-300">
+                            Zobacz Ofertę
+                        </a>
+                    </div>
+                </div>
+                <div class="relative hidden md:block">
+                    <div class="nail-polish absolute -top-20 right-20 w-32 h-32 bg-amber-700 rounded-full opacity-20"></div>
+                    <div class="nail-polish absolute top-10 right-40 w-24 h-24 bg-rose-300 rounded-full opacity-20" style="animation-delay: 1s;"></div>
+                    <div class="nail-polish absolute top-32 right-10 w-20 h-20 bg-beige-200 rounded-full opacity-20" style="animation-delay: 2s;"></div>
+                    <img src="https://cdn.discordapp.com/attachments/1067240851266351255/1370100818572738651/2.jpg?ex=681e4552&is=681cf3d2&hm=07d202c944d467dc86d893e36c4f116bb2c05823b3930ee9242533b144a4f249&" alt="Elegant nails" class="rounded-lg shadow-xl transform rotate-2 border-8 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">Nasze Usługi</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+                <p class="mt-6 text-lg text-amber-800 max-w-3xl mx-auto">
+                    Każda usługa to starannie dobrane doświadczenie, zaprojektowane tak, aby rozpieszczać i udoskonalać przy użyciu najlepszych produktów i technik.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://5.imimg.com/data5/FE/UV/GLADMIN-36584170/nail-art-500x500.png" alt="Luxury manicure" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-spa text-amber-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">The Royal Treatment</h3>
+                        </div>
+                        <p class="text-amber-800 mb-4">
+                            Costamcostam nie znam sie na pazurach.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">220zł</span>
+                            <a href="#booking" class="text-amber-700 hover:text-amber-900 text-sm font-medium flex items-center">
+                                Umów Się <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://img1.wsimg.com/isteam/ip/e6e01bc2-fc6a-4fc5-8bae-b471e64f80f3/48-elegant-french-tip-nail-design-thecuddl.jpg" alt="French manicure" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-crown text-amber-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Parisian Elegance</h3>
+                        </div>
+                        <p class="text-amber-800 mb-4">
+                            Ponadczasowy francuski manicure dopracowany do perfekcji i najwyższej jakości, nieżółknący, biały lakier, który utrzymuje się do 3 tygodni.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">95zł</span>
+                            <a href="#booking" class="text-amber-700 hover:text-amber-900 text-sm font-medium flex items-center">
+                                Umów Się <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcfpRwzbZghUJQfZhekVIAm5t1Lhg4y1bJQdI8nsBb06EAkBAlptuaVE0Vfq2HLmWmZfPTe0LuO8gxLl2mIRmT1HaSpQYGfWbB6X_3QiiRJkJMBRIF9unhSOMvNzg1d25is6eVxdw?key=Je7C59vFct-KjY1JERmEqFTF" alt="Gold leaf nails" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-gem text-amber-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">Gilded Luxury</h3>
+                        </div>
+                        <p class="text-amber-800 mb-4">
+                            Ręcznie nakładane 24-karatowe złote płatki lub kryształy Swarovskiego na lakier żelowy tworzą prawdziwie wystawny efekt. Nie stać Cię...
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">1500+zł</span>
+                            <a href="#booking" class="text-amber-700 hover:text-amber-900 text-sm font-medium flex items-center">
+                                Umów Się <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <img src="https://cdn.discordapp.com/attachments/1067240851266351255/1370109999757525132/Screenshot_20250508_194701_Instagram.jpg?ex=681e4ddf&is=681cfc5f&hm=e2efa82a5a7fd9b15cf090bd00099441eee85d9eada7bf44ca5baeb5dfd89329&" alt="Nail artist" class="max-w-sm w-full h-auto rounded-lg shadow-xl transform -rotate-1 border-8 border-beige-100">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-6">The ManiEra Difference</h2>
+                    <div class="w-20 h-1 bg-amber-700 mb-8"></div>
+                    <p class="text-amber-800 mb-6">
+                        Założona przez młodą, ambitną artystkę sztuki manicure, M. Molczyk, ManiEra wnosi paryską elegancję do świata pielęgnacji paznokci. Nasze atelier to miejsce, w którym każda klientka otrzymuje pełną uwagę i spersonalizowaną usługę.
+                    </p>
+                    <p class="text-amber-800 mb-8">
+                        Korzystamy wyłącznie z najwyższej jakości lakierów przyjaznych weganom i stosujemy medyczny poziom sterylizacji dla Twojego bezpieczeństwa. Każdy detal – od japońskich pilników po starannie dobrane olejki eteryczne używane podczas masażu – został wybrany z myślą o doskonałości.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                                    <i class="fas fa-leaf text-amber-700"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-lg font-bold text-amber-900">Czyste Piękno</h4>
+                                 <p class="text-amber-800 text-sm">Formuły 10-free, wegańskie i nietestowane na zwierzętach</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-amber-700"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-lg font-bold text-amber-900">Bezpieczeństwo</h4>
+                                <p class="text-amber-800 text-sm">Procedury sanitarne na poziomie szpitalnym</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                                    <i class="fas fa-award text-amber-700"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-lg font-bold text-amber-900">Ekspertyza</h4>
+                                <p class="text-amber-800 text-sm">Mistrzyni techniki z 0-letnim doświadczeniem</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                                    <i class="fas fa-heart text-amber-700"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-lg font-bold text-amber-900">Wellness</h4>
+                                <p class="text-amber-800 text-sm">Kompleksowe podejście do zdrowia paznokci</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">Galeria</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+                <p class="mt-6 text-lg text-amber-800 max-w-3xl mx-auto">
+                    Przeglądaj naszą ofertę wykwintnych wzorów paznokci, z których każdy jest niepowtarzalnym arcydziełem stworzonym z myślą o naszych wymagających klientach. 
+          <br><br>Czas sie wykazac, jeszcze 7 wzorow Ci brakuje ¯\_(ツ)_/¯
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://cdn.discordapp.com/attachments/1067240851266351255/1370100818203902113/1.jpg?ex=681e4552&is=681cf3d2&hm=eb7ca8b093be60a17b10a41bb9f9d3499b7a446647bbafbe3266ddfed4559d55&" alt="Nail design 1" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1590239926043-9b5bcb400372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 2" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596704017255-ee527b0bf85f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 3" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df966bc5eb5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 4" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1590239926043-9b5bcb400372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 5" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596704017255-ee527b0bf85f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 6" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df966bc5eb5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 7" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1590239926043-9b5bcb400372?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Nail design 8" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-6">Umów się na wizytę</h2>
+                    <div class="w-20 h-1 bg-amber-700 mb-8"></div>
+                    <p class="text-amber-800 mb-6">
+                        Zarezerwuj swój ekskluzywny termin. Utrzymujemy ograniczoną liczbę wizyt, aby każda klientka mogła liczyć na pełną uwagę.
+                    </p>
+                    <div class="bg-beige-50 p-6 rounded-lg mb-6">
+                        <h4 class="font-bold text-amber-900 mb-3">Godziny otwarcia</h4>
+                        <ul class="space-y-2 text-amber-800">
+                            <li class="flex justify-between"><span>Poniedziałek - Piątek</span> <span class="font-bold">10am - 7pm</span></li>
+                            <li class="flex justify-between"><span>Weekend</span> <span class="font-bold">Nieczynne (wyjątkowo płatne extra)</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-phone-alt text-amber-700"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-amber-900">Wolisz porozmawiać?</h4>
+                            <p class="text-amber-800">Nie dzwoń na <a href="tel:+15551234567" class="font-medium hover:text-amber-700">(555) 123-4567</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-form bg-beige-50 p-8 rounded-lg shadow-md">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-amber-800 font-medium mb-2">Pełne Imię</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-md">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-amber-800 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-md">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-amber-800 font-medium mb-2">Telefon</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-md">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="date" class="block text-amber-800 font-medium mb-2">Preferowana data</label>
+                                <input type="date" id="date" class="w-full px-4 py-3 rounded-md">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-amber-800 font-medium mb-2">Usługa</label>
+                                <select id="service" class="w-full px-4 py-3 rounded-md">
+                                    <option value="">Wybierz usługę</option>
+                                    <option value="royal">The Royal Treatment</option>
+                                    <option value="french">Parisian Elegance</option>
+                                    <option value="gilded">Gilded Luxury</option>
+                                    <option value="custom">Projekt niestandardowy</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="notes" class="block text-amber-800 font-medium mb-2">Specjalne życzenia</label>
+                            <textarea id="notes" rows="3" class="w-full px-4 py-3 rounded-md"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-800 text-white hover:bg-amber-700 px-6 py-3 rounded-md font-medium transition duration-300">
+                            Zarezerwuj Wizytę
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">Odwiedź nasz atelier</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+            </div>
+            
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                <div class="mb-12 lg:mb-0">
+                    <div class="h-full bg-white rounded-lg shadow-md overflow-hidden">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41011.43877497675!2d20.97797965!3d50.02606705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d834352c3ffc7%3A0xcf1a70dff872f61e!2s33-100%20Tarn%C3%B3w%2C%20Poland!5e0!3m2!1sen!2suk!4v1746732107176!5m2!1sen!2suk" width="100%" height="100%" style="min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-amber-900 mb-6">Kontakt</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-amber-700"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-amber-900">Adres</h4>
+                                    <p class="text-amber-800">123 Luxury Lane<br>Tarnów, gdzieś w piwnicy</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-amber-700"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-amber-900">Telefon</h4>
+                                    <p class="text-amber-800">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                                        <i class="fas fa-envelope text-amber-700"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-amber-900">Email</h4>
+                                    <p class="text-amber-800">contact@ManiEranails.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                                        <i class="fas fa-clock text-amber-700"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-amber-900">Godziny Otwarcia</h4>
+                                    <p class="text-amber-800">Poniedziałek - Piątek: 10am - 7pm<br>Weekend: Nieczynne (wyjątkowo - płatne extra)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-bold text-amber-900 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 hover:bg-amber-200 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 hover:bg-amber-200 transition duration-300">
+                                    <i class="fab fa-pinterest"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 hover:bg-amber-200 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="flex justify-center md:col-span-2">
+                <div>
+                    <h3 class="text-xl font-bold text-beige-50 mb-4">ManiEra</h3>
+                    <p class="mb-4">
+                        Wznosimy sztukę manicure do najwyższego poziomu dzięki precyzyjnemu rzemiosłu i niezrównanemu luksusowi.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-beige-100 hover:text-beige-50">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-beige-100 hover:text-beige-50">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="text-beige-100 hover:text-beige-50">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center md:col-span-2">
+                <div>
+                    <h4 class="text-beige-50 font-bold mb-4">Kontakt</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">123 Luxury Lane</p>
+                        <p class="mb-2">Tarnów, gdzieś w piwnicy</p>
+                        <p class="mb-2">Telefon: (555) 123-4567</p>
+                        <p>Email: contact@ManiEranails.com</p>
+                    </address>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-amber-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-beige-200 text-sm mb-4 md:mb-0">
+                &copy; 2025 ManiEra Nail Atelier. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-beige-200 hover:text-beige-50 text-sm">Polityka Prywatności</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const bookingForm = document.querySelector('.booking-form form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your booking request. We will contact you shortly to confirm your appointment.');
+                this.reset();
+            });
+        }
+        
+        const newsletterForm = document.querySelector('section.bg-amber-800 form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
